@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        var randomno;
+        var count;
+        debugger;
+        jQuery(document).ready(function(){
+        debugger;
+        $("#btn1").click(function(){
+        $("div").each(random())
+        })
+        function random()
+        {
+            debugger;
+            count=0;
+            randomno=Math.floor(Math.random()*10);
+            if($(this).attr("id")==randomno)
+            $(this).html("GOLD!!");
+        }
+      
+        $("div").click(function(){
+            debugger;
+            if($(this).attr("id")==randomno)
+            {
+                count++;
+               $(this).css("background-color","white").html("GOLD!!");
+                $("#myDiv").html("YOU WON!");
+                $("#myDiv").css("opacity",1);
+                if(count==3)
+                $("div").unbind("click");
+            }
+            else
+            {
+                count++;
+                $(this).css("background-color","red");
+                if(count==3){
+                $("#myDiv").html("YOU LOOSE!");
+                $("#myDiv").css("opacity",1);
+                $("div").unbind("click")}
+            }
+        })
+        $("#btn2").click(function(){
+           window.location.href="jquery_gold_game.html";
+        })
+        
+    })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+            <div id="1" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px;"></div>
+            </td>
+            <td>
+            <div id="2" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px"></div>
+            </td>
+            <td>
+            <div id="3" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px"></div>
+             </td>
+        </tr>
+        <tr>
+            <td>
+            <div id="4" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px"></div>
+            </td>
+            <td>
+            <div id="5" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px">
+            </div>
+
+            </td>
+            <td>
+            <div id="6" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px">
+            </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <div id="7" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px">
+            </div>
+
+            </td>
+            <td>
+            <div id="8" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px">
+            </div>
+
+            </td>
+            <td>
+            <div id="9" style="height: 120px;width:120px;color:cadetblue; background-color:cadetblue;font-size: 30px">
+            </div>
+
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="Play" id="btn1"> 
+    <input type="button" value="Restart" id="btn2">    
+    <div id="myDiv" style="left:600px;top:100px;height: 300px;width:300px; background-color:goldenrod;font-size: 80px;opacity: 0;position: absolute"></div>
+
+</body>
+</html>
